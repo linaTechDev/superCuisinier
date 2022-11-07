@@ -1,12 +1,26 @@
 import React, {useState} from 'react';
 import Utilisateurs from "./Utilisateurs";
-import SaveUtilisateur from "./SaveUtilisateur";
+import InscriptionUtilisateur from "./inscription/InscriptionUtilisateur";
+import ConnexionUtilisateur from "./connexion/ConnexionUtilisateur";
 
 const PageUtilisateur = () => {
     const [utilisateurs, setUtilisateurs] = useState([])
 
-    const addUtilisateur = async (utilisateur) => {
+    const inscription = async (utilisateur) => {
         const res = await fetch('http://localhost:8080/utilisateur/creation',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(utilisateur)
+            })
+        const data = await res.json()
+        setUtilisateurs([...utilisateurs, data])
+    }
+
+    const connexion = async (utilisateur) => {
+        const res = await fetch('http://localhost:8080/utilisateur/connexion',
             {
                 method: 'POST',
                 headers: {
@@ -20,10 +34,11 @@ const PageUtilisateur = () => {
 
     return (
         <div className='container'>
-            {<SaveUtilisateur onAdd={addUtilisateur} />}
+            {<InscriptionUtilisateur onAdd={inscription} />}
+            {<ConnexionUtilisateur onAdd={connexion} />}
             {utilisateurs.length > 0 ?
                 console.log(<Utilisateurs utilisateurs={utilisateurs}/>)
-                : console.log('No Utilisateurs')}
+                : console.log('nothing yet')}
         </div>
     );
 };
