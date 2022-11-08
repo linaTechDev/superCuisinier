@@ -1,3 +1,17 @@
+import {Component} from "react";
+
+export class CurrentUser extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            token: "",
+            prenom: "",
+            nomFamille: "",
+            nomUtilisateur: ""
+        };
+    }
+}
+
 const Utilisateur = ({utilisateur}) => {
     return (
         <div className="utilisateur">

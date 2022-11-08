@@ -2,7 +2,7 @@ import {useState} from "react";
 import Header from "./Header";
 import '../../../style.css'
 
-const InscriptionUtilisateur = ({onAdd}) => {
+const ConnexionUtilisateur = ({onAdd}) => {
     const [nomUtilisateur, setNomUtilisateur] = useState('');
     const [motPasse,setMotPasse] = useState('');
 
@@ -58,4 +58,4 @@ const InscriptionUtilisateur = ({onAdd}) => {
     )
 }
 
-export default InscriptionUtilisateur
+export default ConnexionUtilisateur
