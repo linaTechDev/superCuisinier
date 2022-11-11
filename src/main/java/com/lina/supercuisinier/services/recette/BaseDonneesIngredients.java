@@ -1,4 +1,4 @@
-package com.lina.supercuisinier.services;
+package com.lina.supercuisinier.services.recette;
 
 import com.lina.supercuisinier.models.recette.Ingredient;
 import com.lina.supercuisinier.repository.IngredientRepository;

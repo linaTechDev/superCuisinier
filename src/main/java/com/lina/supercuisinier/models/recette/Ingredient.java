@@ -3,7 +3,6 @@ package com.lina.supercuisinier.models.recette;
 import com.lina.supercuisinier.dtos.recette.IngredientDto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

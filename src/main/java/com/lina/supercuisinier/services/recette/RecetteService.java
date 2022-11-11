@@ -25,12 +25,14 @@ public class RecetteService {
         return recetteRepository.findById(recetteId).get().toRecetteDto();
     }
 
-    public RecetteDto findByTitre(String titre) {
-        Recette recette = recetteRepository.getRecetteByTitre(titre);
-        if (recette != null) {
-            return recette.toRecetteDto();
+    public List<RecetteDto> findByTitre(String titre) {
+        List<Recette> recettes = recetteRepository.getAllRecetteByTitre(titre);
+        List<RecetteDto> recetteDtos = new ArrayList<>();
+
+        for (Recette recette: recettes) {
+            recetteDtos.add(recette.toRecetteDto());
         }
-        return null;
+        return recetteDtos;
     }
 
     public List<RecetteDto> getAllRecettes() {
@@ -43,7 +45,31 @@ public class RecetteService {
         return recetteDtos;
     }
 
+    public List<RecetteDto> getIngredientsByRecetteId(long id) {
+        List<Recette> recettes = recetteRepository.findIngredientsById(id);
+        List<RecetteDto> recetteDtos = new ArrayList<>();
+
+        for (Recette recette: recettes) {
+            recetteDtos.add(recette.toRecetteDto());
+        }
+        return recetteDtos;
+    }
+
+    public List<RecetteDto> getRecetteByIngredientsId(long id) {
+        List<Recette> recettes = recetteRepository.getIngredientsId(id);
+        List<RecetteDto> recetteDtos = new ArrayList<>();
+
+        for (Recette recette: recettes) {
+            recetteDtos.add(recette.toRecetteDto());
+        }
+        return recetteDtos;
+    }
+
     public void deleteRecette(Recette recette) {
         recetteRepository.delete(recette);
+    }
+
+    public void deleteAllRecette() {
+        recetteRepository.deleteAll();
     }
 }

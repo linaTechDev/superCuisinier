@@ -11,12 +11,10 @@ import lombok.NoArgsConstructor;
 public class IngredientDto {
     private String id;
     private String nom;
-    private RecetteDto recetteDto;
 
     public Ingredient toIngredient() {
         final Ingredient ingredient = new Ingredient(
-                nom,
-                recetteDto.toRecette()
+                nom
         );
         long oldId;
         try {

@@ -33,6 +33,18 @@ public class RecetteController {
         return recetteService.getAllRecettes();
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/ingredients/recettes/{id}")
+    public List<RecetteDto> getIngredientsByRecetteId(@PathVariable long id) {
+        return recetteService.getIngredientsByRecetteId(id);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/ingredients/{id}")
+    public List<RecetteDto> getRecettesByIngredientsId(@PathVariable long id) {
+        return recetteService.getRecetteByIngredientsId(id);
+    }
+
     @PutMapping("/{id}")
     public RecetteDto updateRecette(@PathVariable long id,
                                           @RequestBody RecetteDto recetteDto) {
@@ -49,5 +61,10 @@ public class RecetteController {
     public void deleteRecette(@PathVariable long id) {
         RecetteDto recetteDto = recetteService.getRecette(id);
         recetteService.deleteRecette(recetteDto.toRecette());
+    }
+
+    @DeleteMapping
+    public void deleteAllRecettes() {
+        recetteService.deleteAllRecette();
     }
 }
