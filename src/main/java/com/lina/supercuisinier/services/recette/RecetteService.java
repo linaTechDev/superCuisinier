@@ -56,7 +56,7 @@ public class RecetteService {
     }
 
     public List<RecetteDto> getRecetteByIngredientsId(long id) {
-        List<Recette> recettes = recetteRepository.getIngredientsId(id);
+        List<Recette> recettes = recetteRepository.findByIngredientsId(id);
         List<RecetteDto> recetteDtos = new ArrayList<>();
 
         for (Recette recette: recettes) {

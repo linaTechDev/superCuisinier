@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface RecetteRepository extends JpaRepository<Recette, Long> {
     List<Recette> getAllRecetteByTitre(String titre);
-    List<Recette> getIngredientsId(long id);
+    List<Recette> findByIngredientsId(long id);
 
     @Query(value = "SELECT r.ingredients FROM Recette r")
     List<Recette> findIngredientsById(long id);
