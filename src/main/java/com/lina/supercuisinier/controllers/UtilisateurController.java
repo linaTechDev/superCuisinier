@@ -2,11 +2,11 @@ package com.lina.supercuisinier.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.lina.supercuisinier.dtos.ConnectedUserDto;
-import com.lina.supercuisinier.dtos.CreatedUserDto;
-import com.lina.supercuisinier.dtos.UtilisateurDto;
-import com.lina.supercuisinier.services.ConnectedUserService;
-import com.lina.supercuisinier.services.UtilisateurService;
+import com.lina.supercuisinier.dtos.utilisateur.ConnectedUserDto;
+import com.lina.supercuisinier.dtos.utilisateur.CreatedUserDto;
+import com.lina.supercuisinier.dtos.utilisateur.UtilisateurDto;
+import com.lina.supercuisinier.services.utilisateur.ConnectedUserService;
+import com.lina.supercuisinier.services.utilisateur.UtilisateurService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

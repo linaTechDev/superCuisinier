@@ -1,6 +1,6 @@
 package com.lina.supercuisinier.repository;
 
-import com.lina.supercuisinier.models.Utilisateur;
+import com.lina.supercuisinier.models.utilisateur.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

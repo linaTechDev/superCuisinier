@@ -1,7 +1,7 @@
-package com.lina.supercuisinier.services;
+package com.lina.supercuisinier.services.utilisateur;
 
-import com.lina.supercuisinier.dtos.UtilisateurDto;
-import com.lina.supercuisinier.models.Utilisateur;
+import com.lina.supercuisinier.dtos.utilisateur.UtilisateurDto;
+import com.lina.supercuisinier.models.utilisateur.Utilisateur;
 import com.lina.supercuisinier.repository.UtilisateurRepository;
 import org.springframework.stereotype.Service;
 

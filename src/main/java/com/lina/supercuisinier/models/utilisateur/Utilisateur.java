@@ -1,6 +1,6 @@
-package com.lina.supercuisinier.models;
+package com.lina.supercuisinier.models.utilisateur;
 
-import com.lina.supercuisinier.dtos.UtilisateurDto;
+import com.lina.supercuisinier.dtos.utilisateur.UtilisateurDto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

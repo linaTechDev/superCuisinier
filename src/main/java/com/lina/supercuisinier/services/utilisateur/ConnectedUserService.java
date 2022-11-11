@@ -1,4 +1,4 @@
-package com.lina.supercuisinier.services;
+package com.lina.supercuisinier.services.utilisateur;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
