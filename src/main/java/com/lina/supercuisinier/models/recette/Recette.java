@@ -4,7 +4,6 @@ import com.lina.supercuisinier.dtos.recette.IngredientDto;
 import com.lina.supercuisinier.dtos.recette.RecetteDto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -33,8 +32,6 @@ public class Recette {
     private String calories;
 
     @ManyToMany
-    @JoinColumn(name = "ingredient")
-    @ToString.Exclude
     private List<Ingredient> ingredients;
 
     public Recette(String titre, String portion, String calories, List<Ingredient> ingredients) {
