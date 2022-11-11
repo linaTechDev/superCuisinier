@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -42,7 +42,7 @@ public class Recette {
     }
 
     public RecetteDto toRecetteDto() {
-        List<IngredientDto> ingredientDtos = new ArrayList<>(ingredients.size());
+        List<IngredientDto> ingredientDtos = Arrays.asList(new IngredientDto[ingredients.size()]);
         for (int i = 0; i < ingredients.size(); i++) {
             ingredientDtos.set(i, ingredients.get(i).toIngredientDto());
         }

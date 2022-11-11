@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Data
@@ -20,7 +20,7 @@ public class RecetteDto {
     private List<IngredientDto> ingredientDtos;
 
     public Recette toRecette() {
-        List<Ingredient> ingredients = new ArrayList<>(ingredientDtos.size());
+        List<Ingredient> ingredients = Arrays.asList(new Ingredient[ingredientDtos.size()]);
         for (int i = 0; i < ingredientDtos.size(); i++) {
             ingredients.set(i, ingredientDtos.get(i).toIngredient());
         }
