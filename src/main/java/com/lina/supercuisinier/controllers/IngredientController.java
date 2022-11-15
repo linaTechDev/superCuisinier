@@ -3,7 +3,7 @@ package com.lina.supercuisinier.controllers;
 import com.lina.supercuisinier.dtos.recette.IngredientDto;
 import com.lina.supercuisinier.services.recette.IngredientService;
 import lombok.AllArgsConstructor;
-import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,9 +15,8 @@ import java.util.List;
 public class IngredientController {
     private IngredientService ingredientService;
 
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping
-    public List<IngredientDto> getAllIngredients() {
-        return ingredientService.getAllIngredients();
+    public ResponseEntity<List<IngredientDto>> getAllIngredients() {
+        return ResponseEntity.ok(ingredientService.getAllIngredients());
     }
 }

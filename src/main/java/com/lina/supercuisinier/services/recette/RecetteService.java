@@ -1,7 +1,10 @@
 package com.lina.supercuisinier.services.recette;
 
+import com.lina.supercuisinier.dtos.recette.IngredientDto;
 import com.lina.supercuisinier.dtos.recette.RecetteDto;
+import com.lina.supercuisinier.models.recette.Ingredient;
 import com.lina.supercuisinier.models.recette.Recette;
+import com.lina.supercuisinier.repository.IngredientRepository;
 import com.lina.supercuisinier.repository.RecetteRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +15,11 @@ import java.util.List;
 public class RecetteService {
 
     private RecetteRepository recetteRepository;
+    private IngredientRepository ingredientRepository;
 
-    public RecetteService(RecetteRepository recetteRepository) {
+    public RecetteService(RecetteRepository recetteRepository, IngredientRepository ingredientRepository) {
         this.recetteRepository = recetteRepository;
+        this.ingredientRepository = ingredientRepository;
     }
 
     public RecetteDto saveRecette(Recette recette) {
@@ -45,14 +50,14 @@ public class RecetteService {
         return recetteDtos;
     }
 
-    public List<RecetteDto> getIngredientsByRecetteId(long id) {
-        List<Recette> recettes = recetteRepository.findIngredientsById(id);
-        List<RecetteDto> recetteDtos = new ArrayList<>();
+    public List<IngredientDto> getIngredientsByRecetteId(long id) {
+        List<Ingredient> ingredients = (List<Ingredient>) ingredientRepository.findIngredientsById(id);
+        List<IngredientDto> ingredientDtos = new ArrayList<>();
 
-        for (Recette recette: recettes) {
-            recetteDtos.add(recette.toRecetteDto());
+        for (Ingredient ingredient: ingredients) {
+            ingredientDtos.add(ingredient.toIngredientDto());
         }
-        return recetteDtos;
+        return ingredientDtos;
     }
 
     public List<RecetteDto> getRecetteByIngredientsId(long id) {

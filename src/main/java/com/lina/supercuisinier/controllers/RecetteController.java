@@ -1,9 +1,11 @@
 package com.lina.supercuisinier.controllers;
 
+import com.lina.supercuisinier.dtos.recette.IngredientDto;
 import com.lina.supercuisinier.dtos.recette.RecetteDto;
 import com.lina.supercuisinier.services.recette.RecetteService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,34 +17,29 @@ import java.util.List;
 public class RecetteController {
     private RecetteService recetteService;
 
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public RecetteDto createRecette(@RequestBody RecetteDto recetteDto) {
-        return recetteService.saveRecette(recetteDto.toRecette());
+    public ResponseEntity<RecetteDto> createRecette(@RequestBody RecetteDto recetteDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(recetteService.saveRecette(recetteDto.toRecette()));
     }
 
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{id}")
-    public RecetteDto getRecette(@PathVariable long id) {
-        return recetteService.getRecette(id);
+    public ResponseEntity<RecetteDto> getRecette(@PathVariable long id) {
+        return ResponseEntity.ok(recetteService.getRecette(id));
     }
 
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping
-    public List<RecetteDto> getAllRecettes() {
-        return recetteService.getAllRecettes();
+    public ResponseEntity<List<RecetteDto>> getAllRecettes() {
+        return ResponseEntity.ok(recetteService.getAllRecettes());
     }
 
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/ingredients/recettes/{id}")
-    public List<RecetteDto> getIngredientsByRecetteId(@PathVariable long id) {
-        return recetteService.getIngredientsByRecetteId(id);
+    public ResponseEntity<List<IngredientDto>> getIngredientsByRecetteId(@PathVariable long id) {
+        return ResponseEntity.ok(recetteService.getIngredientsByRecetteId(id));
     }
 
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/ingredients/{id}")
-    public List<RecetteDto> getRecettesByIngredientsId(@PathVariable long id) {
-        return recetteService.getRecetteByIngredientsId(id);
+    public ResponseEntity<List<RecetteDto>> getRecettesByIngredientsId(@PathVariable long id) {
+        return ResponseEntity.ok(recetteService.getRecetteByIngredientsId(id));
     }
 
     @PutMapping("/{id}")
