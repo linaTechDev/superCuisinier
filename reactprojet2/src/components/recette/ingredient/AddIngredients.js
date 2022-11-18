@@ -1,47 +1,44 @@
-import {Component} from "react";
+import {useEffect, useState} from "react";
 import Select from 'react-select'
-import axios from "axios";
 
-export default class AddIngredients extends Component {
+const AddIngredients = ({onChange}) => {
+    const [selectOptions, setSelectOptions] = useState([])
+    const [value, setValue] = useState([])
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectOptions : [],
-            value:[]
+    useEffect(() => {
+        const getOptions = async () => {
+            const optionsFromServer = await fetchOptions()
+            const options = optionsFromServer.map(d => ({
+                "value": d.id,
+                "label": d.nom
+            }))
+            setSelectOptions(options)
         }
+        getOptions()
+    }, [])
+
+    const fetchOptions = async () => {
+        const res = await fetch('http://localhost:8080/ingredient')
+        const data = await res.json()
+        return data
     }
 
-    async getOptions() {
-        const res = await axios.get('http://localhost:8080/ingredient')
-        const data = res.data
-        const options = data.map(d => ({
-            "value": d.id,
-            "label": d.nom
-        }))
-
-        this.setState({selectOptions: options})
+    const handleChange = (e) => {
+        setValue(e)
+        console.log(value)
     }
 
-    handleChange(e) {
-        this.setState({value:e})
-    }
-
-    componentDidMount(){
-        this.getOptions()
-    }
-
-    render() {
-        return (
-            <div>
-                <Select
-                    options={this.state.selectOptions}
-                    onChange={(event) => {
-                        this.handleChange.bind(event)
-                        this.props.onChange(event)
-                    }}
-                    isMulti />
-            </div>
-        )
-    }
+    return (
+        <div>
+            <Select
+                options={selectOptions}
+                onChange={(event) => {
+                    handleChange.bind(event)
+                    onChange(event)
+                }}
+                isMulti />
+        </div>
+    )
 }
+
+export default AddIngredients
