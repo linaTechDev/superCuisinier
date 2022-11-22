@@ -1,6 +1,5 @@
 import {useState} from "react";
 import Header from "./Header";
-import '../../../style.css'
 
 const InscriptionUtilisateur = ({onAdd}) => {
     const [nomUtilisateur, setNomUtilisateur] = useState('');

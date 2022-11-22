@@ -1,7 +1,6 @@
 import { useEffect, useState} from "react";
 import Ingredients from "./Ingredients";
 import React from "react";
-import "./../../../style.css";
 
 const PageIngredient = () => {
 
