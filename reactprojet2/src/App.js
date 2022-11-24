@@ -7,7 +7,7 @@ import InscriptionPage from "./components/utilisateur/inscription/InscriptionPag
 import React from "react";
 import {isConnected} from "./components/utilisateur/connexion/ConnexionPage"
 import PageRecette from "./components/recette/PageRecette";
-import AddIngredients from "./components/recette/ingredient/AddIngredients";
+import GetIngredients from "./components/recette/ingredient/GetIngredients";
 import PageIngredient from "./components/recette/ingredient/PageIngredient";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
               <Route path="/creation" element={<InscriptionPage/>} />
               <Route path="/accueil" element={<HomePage/>}/>
               <Route path="/recette" element={<PageRecette/>}/>
-              <Route path="/ingredientAdd" element={<AddIngredients/>}/>
+              <Route path="/ingredientAdd" element={<GetIngredients/>}/>
               <Route path="/ingredient" element={<PageIngredient/>}/>
           </Routes>
         </div>

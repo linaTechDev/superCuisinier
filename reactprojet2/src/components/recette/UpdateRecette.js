@@ -1,16 +1,19 @@
 import {useEffect, useState} from 'react'
+import GetIngredients from "./ingredient/GetIngredients";
 
 const UpdateLivre = ({recette, onUpdate}) => {
     const [id, setId] = useState(0)
     const [titre, setTitre] = useState('')
     const [portion, setPortion] = useState('')
     const [calories, setCalories] = useState('')
+    const [ingredientDtos, setIngredientDtos] = useState([])
 
     useEffect(() => {
         setId(recette.id)
         setTitre(recette.titre)
         setPortion(recette.portion)
         setCalories(recette.calories)
+        setIngredientDtos(recette.ingredientDtos)
     }, [])
 
     const onSubmit = (e) => {
@@ -19,7 +22,8 @@ const UpdateLivre = ({recette, onUpdate}) => {
         if (
             !titre &&
             !portion &&
-            !calories
+            !calories &&
+            !ingredientDtos
         ) {
             alert('Ajouter une recette')
             return
@@ -46,15 +50,23 @@ const UpdateLivre = ({recette, onUpdate}) => {
             return
         }
 
+        if (
+            !ingredientDtos
+        ) {
+            alert('Ajouter des ingrédients')
+        }
+
         onUpdate({
             id,
             titre,
             portion,
-            calories
+            calories,
+            ingredientDtos
         })
         setTitre('')
         setPortion('')
         setCalories('')
+        setIngredientDtos([])
     }
 
     return (
@@ -76,6 +88,23 @@ const UpdateLivre = ({recette, onUpdate}) => {
                 <input type='text' placeholder='Calories'
                        value={calories}
                        onChange={(e) => setCalories(e.target.value)}/>
+            </div>
+            <div className='form-control'>
+                <label>Ingrédients</label>
+                <GetIngredients
+                    onChange={(e) => {
+                        let ingredients = [e.length]
+                        let n = 0
+                        e.map((i) => {
+                            let ingredient = {}
+                            ingredient.id = i.value
+                            ingredient.nom = i.label
+                            ingredients[n] = ingredient
+                            n++
+                        })
+                        setIngredientDtos(ingredients)
+                    }}
+                />
             </div>
             <input type='submit' value='Mettre à jour une recette' className='btn btn-block bg-black text-light'/>
         </form>

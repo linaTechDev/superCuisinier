@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import Select from 'react-select'
 
-const AddIngredients = ({onChange}) => {
+const GetIngredients = ({onChange}) => {
     const [selectOptions, setSelectOptions] = useState([])
     const [value, setValue] = useState([])
 
@@ -41,4 +41,4 @@ const AddIngredients = ({onChange}) => {
     )
 }
 
-export default AddIngredients
+export default GetIngredients

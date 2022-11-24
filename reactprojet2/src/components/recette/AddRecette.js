@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import AddIngredients from "./ingredient/AddIngredients";
+import GetIngredients from "./ingredient/GetIngredients";
 
 const AddRecette = ({onAdd}) => {
     const [titre, setTitre] = useState('')
@@ -81,7 +81,7 @@ const AddRecette = ({onAdd}) => {
             </div>
             <div className='form-control'>
                 <label>Ingrédients</label>
-                <AddIngredients
+                <GetIngredients
                     onChange={(e) => {
                         let ingredients = [e.length]
                         let n = 0
