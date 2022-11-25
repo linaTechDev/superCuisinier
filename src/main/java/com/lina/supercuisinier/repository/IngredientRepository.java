@@ -15,6 +15,9 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
     @Query(value = "SELECT r.ingredients FROM Recette r WHERE r.id = :id")
     Iterable<Ingredient> findIngredientsById(@Param("id") long id);
 
+    @Query(value = "SELECT i FROM Ingredient i WHERE i.nom = :nom")
+    Ingredient findRecetteIngredientById(@Param("nom") String nom);
+
     @Query(value = "SELECT count(i) FROM Ingredient i")
     int nbrIngredients();
 }

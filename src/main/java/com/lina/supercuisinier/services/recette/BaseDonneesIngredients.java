@@ -16,45 +16,35 @@ public class BaseDonneesIngredients implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (ingredientRepository.nbrIngredients() == 0) {
-            Ingredient lait = new Ingredient("lait");
-            Ingredient sucre = new Ingredient("sucre");
-            Ingredient farine = new Ingredient("farine");
-            Ingredient oeuf = new Ingredient("oeuf");
-            Ingredient chocolat = new Ingredient("chocolat");
-            Ingredient banane = new Ingredient("banane");
-            Ingredient pomme = new Ingredient("pomme");
-            Ingredient vanille = new Ingredient("vanille");
-            Ingredient huile = new Ingredient("huile");
-            Ingredient patate = new Ingredient("patate");
-            Ingredient oignon = new Ingredient("oignon");
-            Ingredient poivron = new Ingredient("poivron");
-            Ingredient fromage = new Ingredient("fromage");
-            Ingredient tomate = new Ingredient("tomate");
-            Ingredient pate = new Ingredient("pâte");
-            Ingredient concombre = new Ingredient("concombre");
-            Ingredient salade = new Ingredient("salade");
-            Ingredient vinaigre = new Ingredient("vinaigre");
-            Ingredient sel = new Ingredient("sel");
-
-            ingredientRepository.save(lait);
-            ingredientRepository.save(sucre);
-            ingredientRepository.save(farine);
-            ingredientRepository.save(oeuf);
-            ingredientRepository.save(chocolat);
-            ingredientRepository.save(banane);
-            ingredientRepository.save(pomme);
-            ingredientRepository.save(vanille);
-            ingredientRepository.save(huile);
-            ingredientRepository.save(patate);
-            ingredientRepository.save(oignon);
-            ingredientRepository.save(poivron);
-            ingredientRepository.save(fromage);
-            ingredientRepository.save(tomate);
-            ingredientRepository.save(pate);
-            ingredientRepository.save(concombre);
-            ingredientRepository.save(salade);
-            ingredientRepository.save(vinaigre);
-            ingredientRepository.save(sel);
+            ingredientRepository.save(new Ingredient("lait"));
+            ingredientRepository.save(new Ingredient("sucre"));
+            ingredientRepository.save(new Ingredient("farine"));
+            ingredientRepository.save(new Ingredient("oeuf"));
+            ingredientRepository.save(new Ingredient("chocolat"));
+            ingredientRepository.save(new Ingredient("banane"));
+            ingredientRepository.save(new Ingredient("pomme"));
+            ingredientRepository.save(new Ingredient("vanille"));
+            ingredientRepository.save(new Ingredient("huile"));
+            ingredientRepository.save(new Ingredient("patate"));
+            ingredientRepository.save(new Ingredient("oignon"));
+            ingredientRepository.save(new Ingredient("poivron"));
+            ingredientRepository.save(new Ingredient("fromage"));
+            ingredientRepository.save(new Ingredient("tomate"));
+            ingredientRepository.save(new Ingredient("pâte"));
+            ingredientRepository.save(new Ingredient("concombre"));
+            ingredientRepository.save(new Ingredient("salade"));
+            ingredientRepository.save(new Ingredient("vinaigre"));
+            ingredientRepository.save(new Ingredient("sel"));
+            ingredientRepository.save(new Ingredient("pain"));
+            ingredientRepository.save(new Ingredient("poivre"));
+            ingredientRepository.save(new Ingredient("beurre"));
+            ingredientRepository.save(new Ingredient("bleuet"));
+            ingredientRepository.save(new Ingredient("sauce tomate"));
+            ingredientRepository.save(new Ingredient("eau"));
+            ingredientRepository.save(new Ingredient("levure"));
+            ingredientRepository.save(new Ingredient("pâte à tarte"));
+            ingredientRepository.save(new Ingredient("amande"));
+            ingredientRepository.save(new Ingredient("citron"));
         }
     }
 }
