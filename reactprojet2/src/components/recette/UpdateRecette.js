@@ -103,6 +103,7 @@ const UpdateLivre = ({recette, onUpdate}) => {
                             n++
                         })
                         setIngredientDtos(ingredients)
+                        console.log(ingredientDtos)
                     }}
                 />
             </div>

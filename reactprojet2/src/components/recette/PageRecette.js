@@ -75,6 +75,7 @@ const PageRecette = () => {
                          setShowAddRecette(!showAddRecette)}
                      showAdd={showAddRecette}/>
             {showAddRecette && <AddRecette onAdd={addRecette} />}
+            <p>Pour Mettre à jour une recette, double click sur une recette</p>
             {recettes.length > 0 ?
                 <Recettes recettes={recettes}
                         onDelete={deleteRecette}

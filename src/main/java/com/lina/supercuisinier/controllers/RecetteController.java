@@ -50,6 +50,7 @@ public class RecetteController {
         recette.setTitre(recetteDto.getTitre());
         recette.setPortion(recetteDto.getPortion());
         recette.setCalories(recetteDto.getCalories());
+        recette.setIngredientDtos(recetteDto.getIngredientDtos());
 
         return recetteService.saveRecette(recette.toRecette());
     }
