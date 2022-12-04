@@ -5,7 +5,6 @@ import GardeMangers from "./GardeMangers";
 import UpdateGardeManger from "./UpdateGardeManger";
 import {Link} from "react-router-dom";
 import { FaToggleOff } from 'react-icons/fa'
-import GetRecettesGardeManger from "./GetRecettesGardeManger";
 
 const PageGardeManger = () => {
     const [showAddGardeManger, setShowAddGardeManger] = useState(false)
@@ -34,6 +33,7 @@ const PageGardeManger = () => {
         const data = await res.json()
         console.log(data)
         setRecettes(data)
+        setShowRecettesGardeManger(!showRecettesGardeManger)
         return data
     }
 
@@ -97,7 +97,6 @@ const PageGardeManger = () => {
             }
             <p>Pour Mettre à jour un garde-manger, double click sur un garde-manger</p>
             {showUpdateGardeManger && <UpdateGardeManger gardeManger={gardeManger} onUpdate={updateGardeManger} />}
-            {/*{showRecettesGardeManger && <GetRecettesGardeManger gardeManger={gardeManger} onRecettes={fetchRecettesGardeManger} recettes={recettes} />}*/}
             {gardeMangers.length > 0 ?
                 <GardeMangers
                     gardeMangers={gardeMangers}
@@ -107,11 +106,7 @@ const PageGardeManger = () => {
                         setShowUpdateGardeManger(!showUpdateGardeManger)
                         setGardeManger(gardeManger)
                     }}
-                    onRecettes={fetchRecettesGardeManger
-                        /*() => {
-                        setShowRecettesGardeManger(!showRecettesGardeManger)
-                        setRecettes(recettes)
-                    }*/}
+                    onRecettes={fetchRecettesGardeManger}
                     showRecettes={showRecettesGardeManger}
                     showUpdate={showUpdateGardeManger}
                 />
