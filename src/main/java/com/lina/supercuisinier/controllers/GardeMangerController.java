@@ -1,6 +1,7 @@
 package com.lina.supercuisinier.controllers;
 
 import com.lina.supercuisinier.dtos.recette.GardeMangerDto;
+import com.lina.supercuisinier.dtos.recette.RecetteDto;
 import com.lina.supercuisinier.services.recette.GardeMangerService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,11 @@ public class GardeMangerController {
     @GetMapping("/{id}")
     public ResponseEntity<GardeMangerDto> getGardeManger(@PathVariable long id) {
         return ResponseEntity.ok(gardeMangerService.getGardeManger(id));
+    }
+
+    @GetMapping("/ingredient/{id}")
+    public ResponseEntity<List<RecetteDto>> getGardeMangerIngredient(@PathVariable long id) {
+        return ResponseEntity.ok(gardeMangerService.getRecetteIngredientGardeManger(id));
     }
 
     @GetMapping
