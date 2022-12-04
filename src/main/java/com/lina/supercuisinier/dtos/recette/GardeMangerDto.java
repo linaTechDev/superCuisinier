@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 public class GardeMangerDto {
     private String id;
+    private String nom;
     private List<IngredientDto> ingredientDtos;
 
     public GardeManger toGardeManger() {
@@ -22,6 +23,7 @@ public class GardeMangerDto {
             ingredients.set(i, ingredientDtos.get(i).toIngredient());
         }
         final GardeManger gardeManger = new GardeManger(
+                nom,
                 ingredients
         );
         long oldId;

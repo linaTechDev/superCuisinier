@@ -1,8 +1,9 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import HeaderAdd from "./HeaderAdd";
 import AddRecette from "./AddRecette";
 import Recettes from "./Recettes";
 import UpdateRecette from "./UpdateRecette";
+import {Link} from "react-router-dom";
 
 const PageRecette = () => {
 
@@ -74,6 +75,7 @@ const PageRecette = () => {
                      onAdd={() =>
                          setShowAddRecette(!showAddRecette)}
                      showAdd={showAddRecette}/>
+            <p><Link to="/accueil">Retour à l'accueil</Link></p>
             {showAddRecette && <AddRecette onAdd={addRecette} />}
             <p>Pour Mettre à jour une recette, double click sur une recette</p>
             {recettes.length > 0 ?

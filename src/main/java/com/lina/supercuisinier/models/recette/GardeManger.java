@@ -12,16 +12,22 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "gardeManger")
+@Table(name = "gardeManger",
+        uniqueConstraints = {
+        @UniqueConstraint(columnNames = "nom")
+})
 public class GardeManger {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String nom;
+
     @OneToMany
     List<Ingredient> ingredients;
 
-    public GardeManger(List<Ingredient> ingredients) {
+    public GardeManger(String nom, List<Ingredient> ingredients) {
+        this.nom = nom;
         this.ingredients = ingredients;
     }
 
@@ -32,6 +38,7 @@ public class GardeManger {
         }
         return new GardeMangerDto(
                 String.valueOf(id),
+                nom,
                 ingredientDtos
         );
     }

@@ -9,6 +9,7 @@ import {isConnected} from "./components/utilisateur/connexion/ConnexionPage"
 import PageRecette from "./components/recette/PageRecette";
 import GetIngredients from "./components/recette/ingredient/GetIngredients";
 import PageIngredient from "./components/recette/ingredient/PageIngredient";
+import PageGardeManger from "./components/recette/gardeManger/PageGardeManger";
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/creation" element={<InscriptionPage/>} />
               <Route path="/accueil" element={<HomePage/>}/>
               <Route path="/recette" element={<PageRecette/>}/>
+              <Route path="/gardeManger" element={<PageGardeManger/>}/>
               <Route path="/ingredientAdd" element={<GetIngredients/>}/>
               <Route path="/ingredient" element={<PageIngredient/>}/>
           </Routes>
