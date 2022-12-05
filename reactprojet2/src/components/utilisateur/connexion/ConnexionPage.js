@@ -3,6 +3,9 @@ import ConnexionUtilisateur from "./ConnexionUtilisateur";
 import {Link, Navigate} from "react-router-dom";
 import {CurrentUser} from "../Utilisateur";
 import {isExpired} from "react-jwt";
+import "./ConnexionPage.css"
+import Header from "./Header";
+
 const ConnexionPage = () => {
     const [utilisateurs, setUtilisateurs] = useState([]);
 
@@ -27,7 +30,8 @@ const ConnexionPage = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='fondConnexion'>
+            <Header/>
             {<ConnexionUtilisateur onAdd={connexion} />}
             <Link to='/creation'>Pas de compte, inscrit toi</Link>
             {utilisateurs.length > 0 ?

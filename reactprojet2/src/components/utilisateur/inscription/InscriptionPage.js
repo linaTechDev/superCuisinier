@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import InscriptionUtilisateur from "./InscriptionUtilisateur";
-import {Navigate} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
+import "./InscriptionPage.css"
+import Header from "./Header";
 
 const InscriptionPage = () => {
     const [utilisateurs, setUtilisateurs] = useState([])
@@ -18,8 +20,10 @@ const InscriptionPage = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='fondInscription'>
+            <Header/>
             {<InscriptionUtilisateur onAdd={inscription} />}
+            <Link to='/connexion'>Retour</Link>
             {utilisateurs.length > 0 ?
                 <Navigate to="/connexion"/>
                 : console.log('nothing yet')}

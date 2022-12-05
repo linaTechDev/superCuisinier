@@ -1,0 +1,38 @@
+.fondAccueil {
+    display: block;
+    height: 100vh;
+    margin: 0;
+    background-image: url("./../fondAccueil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titre {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #52331b;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 60px;
+}
+
+.menu {
+    margin-top: 200px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.gardeManger {
+    color: #52331b;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 44px;
+}
+
+.recette {
+    color: #52331b;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 44px;
+}

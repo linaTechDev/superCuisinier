@@ -1,13 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
-let img = 'https://www.mesinspirationsculinaires.com/wp-content/uploads/2020/04/recette-ramadan-2020-1-620x330.jpg'
+import "./HomePage.css"
 
 const HomePage = () => (
-    <div>
-        <h2><Link to="/recette">Recette</Link></h2>
-        <h2><Link to="/gardeManger">Garde-manger</Link></h2>
-        <img src={img} alt="recette"/>
+    <div className='fondAccueil'>
+        <h1 className='titre'>Super Cuisinier</h1>
+        <div className='menu'>
+            <Link to="/recette"><h2 className='recette'>Recette</h2></Link>
+            <Link to="/gardeManger"><h2 className='gardeManger'>Garde-manger</h2></Link>
+        </div>
     </div>
 )
 

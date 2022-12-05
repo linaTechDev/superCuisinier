@@ -1,11 +1,8 @@
 import React from 'react';
+import "./InscriptionPage.css"
 function Header() {
     return(
-        <nav className="bg-dark navbar-dark navbar">
-            <div className="row col-12 d-flex justify-content-center text-white">
-                <h3>Inscription</h3>
-            </div>
-        </nav>
+        <h1 className='card-header headerInscription'>Inscription</h1>
     )
 }
 export default Header;

@@ -1,0 +1,34 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.headerConnexion {
+    text-align: center;
+}
+
+.fondConnexion {
+    display: block;
+    height: 100vh;
+    margin: 0;
+    background-image: url(".././../../fond.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.saisie {
+    width: 350px;
+    background-color: #E7B97D;
+    color: white;
+    border-radius: 25px;
+}
+
+.saisie-user {
+    padding-left:35px;
+    background-size: 20px;
+}
+
+.saisie-psw {
+    padding-left:35px;
+    background-size: 20px;
+}

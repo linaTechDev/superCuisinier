@@ -14,7 +14,6 @@ import PageGardeManger from "./components/recette/gardeManger/PageGardeManger";
 function App() {
     return (
         <div>
-          <h1>Super cuisinier</h1>
           <Routes>
               <Route path="/"
                      element={
