@@ -4,6 +4,7 @@ import AddRecette from "./AddRecette";
 import Recettes from "./Recettes";
 import UpdateRecette from "./UpdateRecette";
 import {Link} from "react-router-dom";
+import "./PageRecette.css"
 
 const PageRecette = () => {
 
@@ -70,7 +71,7 @@ const PageRecette = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container recetteFond'>
             <HeaderAdd title='Recette'
                      onAdd={() =>
                          setShowAddRecette(!showAddRecette)}
@@ -78,6 +79,7 @@ const PageRecette = () => {
             <p><Link to="/accueil">Retour à l'accueil</Link></p>
             {showAddRecette && <AddRecette onAdd={addRecette} />}
             <p>Pour Mettre à jour une recette, double click sur une recette</p>
+            {showUpdateRecette && <UpdateRecette recette={recette} onUpdate={updateRecette} />}
             {recettes.length > 0 ?
                 <Recettes recettes={recettes}
                         onDelete={deleteRecette}
@@ -88,7 +90,6 @@ const PageRecette = () => {
                         showUpdate={showUpdateRecette}
                 />
                 : 'No recettes'}
-            {showUpdateRecette && <UpdateRecette recette={recette} onUpdate={updateRecette} />}
         </div>
     );
 }

@@ -1,0 +1,7 @@
+.recetteFond {
+    background-color: rgba(0, 100, 0, 0.25);
+}
+
+.addRecette, .updateRecette {
+    background-color: rgba(0, 100, 0, 0.04) !important;
+}

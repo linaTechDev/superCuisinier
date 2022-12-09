@@ -70,45 +70,47 @@ const UpdateLivre = ({recette, onUpdate}) => {
     }
 
     return (
-        <form className='add-form' onSubmit={onSubmit}>
-            <div className='form-control'>
-                <label>Titre</label>
-                <input type='text' placeholder='Titre'
-                       value={titre}
-                       onChange={(e) => setTitre(e.target.value)}/>
-            </div>
-            <div className='form-control'>
-                <label>Portion</label>
-                <input type='text' placeholder='Portion'
-                       value={portion}
-                       onChange={(e) => setPortion(e.target.value)}/>
-            </div>
-            <div className='form-control'>
-                <label>Calories</label>
-                <input type='text' placeholder='Calories'
-                       value={calories}
-                       onChange={(e) => setCalories(e.target.value)}/>
-            </div>
-            <div className='form-control'>
-                <label>Ingrédients</label>
-                <GetIngredients
-                    onChange={(e) => {
-                        let ingredients = [e.length]
-                        let n = 0
-                        e.map((i) => {
-                            let ingredient = {}
-                            ingredient.id = i.value
-                            ingredient.nom = i.label
-                            ingredients[n] = ingredient
-                            n++
-                        })
-                        setIngredientDtos(ingredients)
-                        console.log(ingredientDtos)
-                    }}
-                />
-            </div>
-            <input type='submit' value='Mettre à jour une recette' className='btn btn-block bg-black text-light'/>
-        </form>
+        <div className="updateRecette">
+            <form className='add-form' onSubmit={onSubmit}>
+                <div className='form-control updateRecette'>
+                    <label>Titre</label>
+                    <input type='text' placeholder='Titre'
+                           value={titre}
+                           onChange={(e) => setTitre(e.target.value)}/>
+                </div>
+                <div className='form-control updateRecette'>
+                    <label>Portion</label>
+                    <input type='text' placeholder='Portion'
+                           value={portion}
+                           onChange={(e) => setPortion(e.target.value)}/>
+                </div>
+                <div className='form-control updateRecette'>
+                    <label>Calories</label>
+                    <input type='text' placeholder='Calories'
+                           value={calories}
+                           onChange={(e) => setCalories(e.target.value)}/>
+                </div>
+                <div className='form-control updateRecette'>
+                    <label>Ingrédients</label>
+                    <GetIngredients
+                        onChange={(e) => {
+                            let ingredients = [e.length]
+                            let n = 0
+                            e.map((i) => {
+                                let ingredient = {}
+                                ingredient.id = i.value
+                                ingredient.nom = i.label
+                                ingredients[n] = ingredient
+                                n++
+                            })
+                            setIngredientDtos(ingredients)
+                            console.log(ingredientDtos)
+                        }}
+                    />
+                </div>
+                <input type='submit' value='Mettre à jour une recette' className='btn btn-block bg-black text-light'/>
+            </form>
+        </div>
     )
 }
 

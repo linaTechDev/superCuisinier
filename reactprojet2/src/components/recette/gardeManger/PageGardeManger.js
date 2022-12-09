@@ -5,6 +5,7 @@ import GardeMangers from "./GardeMangers";
 import UpdateGardeManger from "./UpdateGardeManger";
 import {Link} from "react-router-dom";
 import { FaToggleOff } from 'react-icons/fa'
+import "./PageGardeManger.css"
 
 const PageGardeManger = () => {
     const [showAddGardeManger, setShowAddGardeManger] = useState(false)
@@ -79,7 +80,7 @@ const PageGardeManger = () => {
     }
 
     return (
-        <div className='container'>
+        <div className='container gardeMangerFond'>
             <h1>Garde-manger</h1>
             <p><Link to="/accueil">Retour à l'accueil</Link></p>
             {gardeMangers.length === 0 ?
@@ -110,7 +111,7 @@ const PageGardeManger = () => {
                     showRecettes={showRecettesGardeManger}
                     showUpdate={showUpdateGardeManger}
                 />
-                : 'No garde-manger'}
+                : 'pas de garde-manger'}
         </div>
     );
 }
