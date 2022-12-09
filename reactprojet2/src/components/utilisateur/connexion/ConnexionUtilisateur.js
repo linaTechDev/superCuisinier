@@ -38,7 +38,7 @@ const ConnexionUtilisateur = ({onAdd}) => {
     }
 
     return (
-        <div className='card-body'>
+        <div className='card-body fondCU'>
             <form autoComplete="off" className='add-form' onSubmit={onSubmit}>
                 <div className='form-group'>
                     <label>Nom d'utilisateur</label>

@@ -33,7 +33,7 @@ const ConnexionPage = () => {
         <div className='fondConnexion'>
             <Header/>
             {<ConnexionUtilisateur onAdd={connexion} />}
-            <Link to='/creation'>Pas de compte, inscrit toi</Link>
+            <Link to='/creation' className="goInscription">Pas de compte, inscrit toi</Link>
             {utilisateurs.length > 0 ?
                 <Navigate to="/accueil"/>
                 : console.log('nothing yet')}

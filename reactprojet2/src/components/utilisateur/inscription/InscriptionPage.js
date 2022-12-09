@@ -23,7 +23,7 @@ const InscriptionPage = () => {
         <div className='fondInscription'>
             <Header/>
             {<InscriptionUtilisateur onAdd={inscription} />}
-            <Link to='/connexion'>Retour</Link>
+            <Link to='/connexion' className="goConnexion">Retour</Link>
             {utilisateurs.length > 0 ?
                 <Navigate to="/connexion"/>
                 : console.log('nothing yet')}

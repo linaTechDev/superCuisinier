@@ -8,11 +8,15 @@ body, html {
     text-align: center;
 }
 
+.goConnexion {
+    margin-left: 500px;
+}
+
 .fondIU {
     display: block;
     height: 66vh;
     width: 500px;
-    margin: 0;
+    margin-left: 500px;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -24,7 +28,7 @@ body, html {
     margin: 0;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../../../fondConnexionInscrip.jpg");
+    background-image: url("../../../essai.jpg");
 }
 
 .saisie {

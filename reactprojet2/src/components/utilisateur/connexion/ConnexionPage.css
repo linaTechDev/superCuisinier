@@ -7,11 +7,24 @@ body, html {
     text-align: center;
 }
 
+.goInscription {
+    margin-left: 500px;
+}
+
+.fondCU {
+    display: block;
+    height: 40vh;
+    width: 500px;
+    margin-left: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .fondConnexion {
     display: block;
     height: 100vh;
     margin: 0;
-    background-image: url("../../../fondConnexionInscrip.jpg");
+    background-image: url("../../../essai.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
