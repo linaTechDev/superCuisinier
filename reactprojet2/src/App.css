@@ -7,21 +7,6 @@
   pointer-events: none;
 }
 
-table {
-  width: 600px;
-  height: 200px;
-  border-collapse: collapse;
-}
-
-th {
-  border-bottom: 1px solid black;
-}
-
-td {
-  text-align: center;
-  border: 2px solid black;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

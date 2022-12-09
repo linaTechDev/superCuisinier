@@ -1,5 +1,6 @@
 body, html {
     height: 100%;
+    width: 100%;
     margin: 0;
 }
 
@@ -7,13 +8,23 @@ body, html {
     text-align: center;
 }
 
-.fondInscription {
+.fondIU {
     display: block;
-    height: 100vh;
+    height: 66vh;
+    width: 500px;
     margin: 0;
-    background-image: url(".././../../fond.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.fondInscription {
+    display: block;
+    height: 744px;
+    width: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../../fondConnexionInscrip.jpg");
 }
 
 .saisie {

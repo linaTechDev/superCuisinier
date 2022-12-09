@@ -11,7 +11,7 @@ body, html {
     display: block;
     height: 100vh;
     margin: 0;
-    background-image: url(".././../../fond.jpg");
+    background-image: url("../../../fondConnexionInscrip.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }

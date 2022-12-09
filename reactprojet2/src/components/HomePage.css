@@ -2,7 +2,7 @@
     display: block;
     height: 100vh;
     margin: 0;
-    background-image: url("./../fondAccueil.png");
+    background-image: url("../fondHomePage.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -21,7 +21,7 @@
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.gardeManger {
+.gardeMangerHome {
     color: #52331b;
     font-weight: bolder;
     text-align: center;
@@ -29,7 +29,7 @@
     font-size: 44px;
 }
 
-.recette {
+.recetteHome {
     color: #52331b;
     font-weight: bolder;
     text-align: center;
